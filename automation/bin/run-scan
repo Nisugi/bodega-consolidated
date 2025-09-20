@@ -52,11 +52,11 @@ log "Command: ruby $LICH_DIR/lich.rb --login $SIMU_CHARACTER --without-frontend 
 cd "$(dirname "$0")/../.."
 
 # Launch Lich
-ruby "$LICH_DIR/lich.rb" \\
-  --login "$SIMU_CHARACTER" \\
-  --without-frontend \\
-  --detachable-client=8000 \\
-  --start-scripts=headless \\
+ruby "$LICH_DIR/lich.rb" \
+  --login "$SIMU_CHARACTER" \
+  --without-frontend \
+  --detachable-client=8000 \
+  --start-scripts=headless \
   >> "$LOG_FILE" 2>&1 &
 
 LICH_PID=$!

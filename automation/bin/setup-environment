@@ -3,6 +3,10 @@ set -e
 
 echo "=== Bodega Consolidated - Environment Setup ==="
 
+# Check Ruby version
+echo "Checking Ruby version..."
+ruby --version
+
 # Install required Ruby gems
 echo "Installing required gems..."
 gem install sqlite3 terminal-table mechanize nokogiri sequel
