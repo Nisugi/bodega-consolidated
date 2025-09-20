@@ -28,8 +28,8 @@ jobs:
       run: |
         echo "Checking docs folder structure..."
         ls -la docs/
-        echo "Checking data folder..."
-        ls -la data/
+        echo "Checking docs/data folder..."
+        ls -la docs/data/
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
