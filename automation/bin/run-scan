@@ -51,12 +51,11 @@ log "Command: ruby $LICH_DIR/lich.rb --login $SIMU_CHARACTER --without-frontend 
 # Change to project root so relative paths work
 cd "$(dirname "$0")/../.."
 
-# Launch Lich with proper log directory
+# Launch Lich
 ruby "$LICH_DIR/lich.rb" \
   --login "$SIMU_CHARACTER" \
   --without-frontend \
   --detachable-client=8000 \
-  --logs="$LICH_DIR/logs" \
   --start-scripts=headless \
   >> "$LOG_FILE" 2>&1 &
 
