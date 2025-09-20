@@ -1,0 +1,71 @@
+#!/bin/bash
+set -e
+
+echo "=== Bodega Consolidated - Environment Setup ==="
+
+# Install required Ruby gems
+echo "Installing required gems..."
+gem install sqlite3 terminal-table mechanize nokogiri sequel
+
+# Create necessary directories
+mkdir -p ~/lich
+mkdir -p automation/logs
+
+# Copy our Lich setup to home directory
+echo "Installing Lich environment..."
+if [ -d ~/lich ]; then
+  echo "Backing up existing ~/lich directory..."
+  mv ~/lich ~/lich.backup.$(date +%s)
+fi
+
+cp -r automation/lich ~/
+chmod +x ~/lich/lich.rb
+
+# Create entry.dat from environment variables
+echo "Creating authentication file from GitHub Secrets..."
+ruby -e "
+require 'base64'
+
+# Validate required environment variables
+unless ENV['SIMU_USERNAME'] && ENV['SIMU_PASSWORD'] && ENV['SIMU_CHARACTER']
+  puts 'ERROR: Missing required environment variables'
+  puts 'Required: SIMU_USERNAME, SIMU_PASSWORD, SIMU_CHARACTER'
+  exit 1
+end
+
+# Create entry data structure
+entry_data = [{
+  char_name: ENV['SIMU_CHARACTER'],
+  game_code: 'GS3',
+  game_name: 'GemStone IV',
+  user_id: ENV['SIMU_USERNAME'],
+  password: ENV['SIMU_PASSWORD'],
+  frontend: 'stormfront',
+  custom_launch: nil,
+  custom_launch_dir: nil
+}]
+
+# Marshal and encode
+marshalled_data = Marshal.dump(entry_data)
+encoded_data = Base64.encode64(marshalled_data)
+
+# Write to entry.dat
+File.open(File.expand_path('~/lich/data/entry.dat'), 'w') { |f| f.write(encoded_data) }
+
+puts 'Authentication file created successfully'
+
+# Verify
+begin
+  test_data = File.open(File.expand_path('~/lich/data/entry.dat'), 'r') { |f|
+    Marshal.load(f.read.unpack('m').first)
+  }
+  puts 'Verification: Character ' + test_data.first[:char_name] + ' ready for automation'
+rescue => e
+  puts 'ERROR: Failed to verify authentication - ' + e.message
+  exit 1
+end
+"
+
+echo "Environment setup completed successfully!"
+echo "Character: $SIMU_CHARACTER"
+echo "Lich installation: ~/lich/"
