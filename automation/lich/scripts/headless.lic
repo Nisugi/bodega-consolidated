@@ -93,7 +93,7 @@ if Script.exists?("bodega") || defined?(Bodega)
     # Verify we can access Bodega components
     unless defined?(Bodega::Opts) && defined?(Bodega::Parser)
       Lich.log("WARNING: Bodega module structure not as expected")
-      Lich.log("Available constants: #{Bodega.constants}" if defined?(Bodega))
+      Lich.log("Available constants: #{Bodega.constants}") if defined?(Bodega)
     end
 
     # Set automation flags (graceful fallback if Opts not available)
