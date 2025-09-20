@@ -4,6 +4,7 @@ automation/logs/*
 
 # Lich runtime files
 automation/lich/logs/*
+!automation/lich/logs/.gitkeep
 automation/lich/data/entry.dat
 automation/lich/data/*.db3
 !automation/lich/data/.gitkeep

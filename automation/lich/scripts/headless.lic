@@ -67,6 +67,15 @@ if ENV["DEBUG"] || ENV["GITHUB_ACTIONS"]
   Lich.log("Debug mode enabled - detailed logging active")
 end
 
+# Start logging script for game output capture
+Lich.log("Starting log.lic for game output capture...")
+begin
+  Script.start('log')
+  Lich.log("Log script started successfully")
+rescue => e
+  Lich.log("WARNING: Could not start log script: #{e.message}")
+end
+
 # Main automation logic
 if Script.exists?("bodega") || defined?(Bodega)
   begin

@@ -8,18 +8,12 @@ echo "Installing required gems..."
 gem install sqlite3 terminal-table mechanize nokogiri sequel
 
 # Create necessary directories
-mkdir -p ~/lich
+mkdir -p automation/lich/data
 mkdir -p automation/logs
 
-# Copy our Lich setup to home directory
-echo "Installing Lich environment..."
-if [ -d ~/lich ]; then
-  echo "Backing up existing ~/lich directory..."
-  mv ~/lich ~/lich.backup.$(date +%s)
-fi
-
-cp -r automation/lich ~/
-chmod +x ~/lich/lich.rb
+# Ensure Lich scripts are executable
+echo "Setting up Lich environment..."
+chmod +x automation/lich/lich.rb
 
 # Create entry.dat from environment variables
 echo "Creating authentication file from GitHub Secrets..."
@@ -49,14 +43,14 @@ entry_data = [{
 marshalled_data = Marshal.dump(entry_data)
 encoded_data = Base64.encode64(marshalled_data)
 
-# Write to entry.dat
-File.open(File.expand_path('~/lich/data/entry.dat'), 'w') { |f| f.write(encoded_data) }
+# Write to entry.dat in local automation directory
+File.open('automation/lich/data/entry.dat', 'w') { |f| f.write(encoded_data) }
 
 puts 'Authentication file created successfully'
 
 # Verify
 begin
-  test_data = File.open(File.expand_path('~/lich/data/entry.dat'), 'r') { |f|
+  test_data = File.open('automation/lich/data/entry.dat', 'r') { |f|
     Marshal.load(f.read.unpack('m').first)
   }
   puts 'Verification: Character ' + test_data.first[:char_name] + ' ready for automation'
@@ -68,4 +62,5 @@ end
 
 echo "Environment setup completed successfully!"
 echo "Character: $SIMU_CHARACTER"
-echo "Lich installation: ~/lich/"
+echo "Lich installation: automation/lich/"
+echo "Authentication file: automation/lich/data/entry.dat"

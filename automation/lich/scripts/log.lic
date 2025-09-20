@@ -1,0 +1,118 @@
+=begin
+  Enhanced Logging Script for Bodega Automation
+  Captures all game output and saves to automation/lich/logs/
+
+  This script runs alongside headless.lic to provide comprehensive logging
+  of the automation session for debugging and artifact storage.
+=end
+
+require 'pathname'
+
+# Create logs directory if it doesn't exist
+log_dir = File.expand_path("../logs", __FILE__)
+Dir.mkdir(log_dir) unless Dir.exist?(log_dir)
+
+# Generate timestamped log filename
+timestamp = Time.now.strftime("%Y%m%d-%H%M%S")
+character_name = Char.name || "unknown"
+log_filename = "#{character_name}-#{timestamp}.log"
+log_path = File.join(log_dir, log_filename)
+
+Lich.log("Starting game logging to: #{log_path}")
+
+# Open log file for writing
+begin
+  log_file = File.open(log_path, 'w')
+  log_file.sync = true  # Flush immediately
+
+  # Write session header
+  log_file.puts "=== Bodega Automation Session Log ==="
+  log_file.puts "Start Time: #{Time.now}"
+  log_file.puts "Character: #{character_name}"
+  log_file.puts "Account: #{Settings['login']}"
+  log_file.puts "Automation Mode: #{ENV['CI'] ? 'GitHub Actions' : 'Local'}"
+  log_file.puts "=" * 50
+  log_file.puts ""
+
+  Lich.log("Log file opened successfully")
+
+  # Hook into game output stream
+  upstream_hook = proc { |line|
+    begin
+      # Write to log file with timestamp
+      log_file.puts "[#{Time.now.strftime('%H:%M:%S')}] #{line}"
+
+      # Also log important events to Lich console
+      if line =~ /^You (?:go|walk|climb|swim|crawl)/
+        Lich.log("Movement: #{line.strip}")
+      elsif line =~ /^(?:>|<)/
+        # Commands and responses - don't spam console
+      elsif line =~ /(?:Error|ERROR|Failed|FAILED|Exception)/i
+        Lich.log("ERROR detected: #{line.strip}")
+      elsif line =~ /(?:disconnect|timeout|lost connection)/i
+        Lich.log("Connection issue: #{line.strip}")
+      end
+
+    rescue => e
+      Lich.log("Log writing error: #{e.message}")
+    end
+
+    nil  # Don't modify the line
+  }
+
+  # Register the hook
+  UpstreamHook.add('bodega-logger', upstream_hook)
+  Lich.log("Game output logging enabled")
+
+  # Monitor for script completion
+  begin
+    loop do
+      sleep 5
+
+      # Check if headless script is still running
+      unless Script.running?('headless')
+        Lich.log("Headless script completed - stopping logging")
+        break
+      end
+
+      # Check for disconnection
+      unless connected?
+        Lich.log("Game disconnected - stopping logging")
+        break
+      end
+    end
+
+  rescue Interrupt
+    Lich.log("Logging interrupted by user")
+  rescue => e
+    Lich.log("Logging error: #{e.message}")
+  end
+
+rescue => e
+  Lich.log("ERROR: Failed to create log file: #{e.message}")
+  Lich.log("Log directory: #{log_dir}")
+
+ensure
+  # Cleanup
+  if defined?(log_file) && log_file && !log_file.closed?
+    begin
+      log_file.puts ""
+      log_file.puts "=" * 50
+      log_file.puts "End Time: #{Time.now}"
+      log_file.puts "Session Duration: #{Time.now - start_time if defined?(start_time)} seconds"
+      log_file.puts "=== End of Session ==="
+      log_file.close
+      Lich.log("Log file closed: #{log_path}")
+    rescue => e
+      Lich.log("Error closing log file: #{e.message}")
+    end
+  end
+
+  # Remove the hook
+  if defined?(upstream_hook)
+    UpstreamHook.remove('bodega-logger')
+    Lich.log("Logging hook removed")
+  end
+end
+
+Lich.log("Bodega logging script completed")
