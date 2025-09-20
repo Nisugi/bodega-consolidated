@@ -1657,18 +1657,14 @@ module Bodega
   module Parser
     def self.smart_scan
       Log.out("Starting smart scan mode", label: :automation)
-      Opts[:smart] = true
-      Opts[:save] = true
-      Opts[:parser] = true
-      Bodega.run
+      Script.run("bodega", "--parser", "--smart", "--save")
     end
 
     def self.full_scan
       Log.out("Starting full scan mode", label: :automation)
-      Opts[:smart] = false
-      Opts[:save] = true
-      Opts[:parser] = true
-      Bodega.run
+      # Full scan does smart scan first, then full scan
+      Script.run("bodega", "--parser", "--smart", "--save")
+      Script.run("bodega", "--parser", "--save")
     end
 
     def self.to_json
