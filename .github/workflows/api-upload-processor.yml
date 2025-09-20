@@ -283,7 +283,7 @@ jobs:
         Co-Authored-By: GitHub API Upload <noreply@github.com>"
         fi
 
-        git push origin main
+        git push origin master
         echo "✅ Successfully committed and pushed changes"
 
     - name: Trigger deploy workflow

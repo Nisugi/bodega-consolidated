@@ -11,8 +11,8 @@ log() {
 log "Processing scan results..."
 
 # Check if we have any updated data files
-if [ ! -d "data" ]; then
-    log "ERROR: data directory not found"
+if [ ! -d "docs/data" ]; then
+    log "ERROR: docs/data directory not found"
     exit 1
 fi
 
@@ -22,7 +22,7 @@ git config user.email "automation@bodega.local"
 
 # Add all data files
 log "Adding data files to git..."
-git add data/*.json
+git add docs/data/*.json
 
 # Check if there are changes to commit
 if git diff --staged --quiet; then
