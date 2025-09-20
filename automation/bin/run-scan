@@ -33,25 +33,26 @@ else
 fi
 
 # Validate setup
-if [ ! -f ~/lich/lich.rb ]; then
-    log "ERROR: Lich not found at ~/lich/lich.rb"
+LICH_DIR="automation/lich"
+if [ ! -f "$LICH_DIR/lich.rb" ]; then
+    log "ERROR: Lich not found at $LICH_DIR/lich.rb"
     exit 1
 fi
 
-if [ ! -f ~/lich/data/entry.dat ]; then
+if [ ! -f "$LICH_DIR/data/entry.dat" ]; then
     log "ERROR: Authentication file not found - run setup-environment first"
     exit 1
 fi
 
 # Start Lich with our enhanced headless script
 log "Launching Lich with enhanced Ruby automation..."
-log "Command: ruby ~/lich/lich.rb --login $SIMU_CHARACTER --without-frontend --detachable-client=8000 --start-scripts=headless"
+log "Command: ruby $LICH_DIR/lich.rb --login $SIMU_CHARACTER --without-frontend --detachable-client=8000 --start-scripts=headless"
 
 # Change to project root so relative paths work
 cd "$(dirname "$0")/../.."
 
 # Launch Lich
-ruby ~/lich/lich.rb \\
+ruby "$LICH_DIR/lich.rb" \\
   --login "$SIMU_CHARACTER" \\
   --without-frontend \\
   --detachable-client=8000 \\
