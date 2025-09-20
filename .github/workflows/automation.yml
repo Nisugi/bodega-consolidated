@@ -66,6 +66,7 @@ jobs:
         path: |
           automation/logs/
           automation/lich/logs/
+          automation/lich/temp/
         retention-days: 30
 
     - name: Log scan summary
