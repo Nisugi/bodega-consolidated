@@ -77,34 +77,8 @@ rescue => e
 end
 
 # Main automation logic
-if Script.exists?("bodega") || defined?(Bodega)
+if Script.exists?("bodega")
   begin
-    # Ensure Bodega module is available
-    unless defined?(Bodega)
-      Lich.log("Bodega module not detected, attempting to load script...")
-      # Try to run the bodega script to get the module loaded
-      if Script.exists?("bodega")
-        # The script should define the module when loaded
-      else
-        raise "Bodega module not loaded and script not available"
-      end
-    end
-
-    # Verify we can access Bodega components
-    unless defined?(Bodega::Opts) && defined?(Bodega::Parser)
-      Lich.log("WARNING: Bodega module structure not as expected")
-      Lich.log("Available constants: #{Bodega.constants}") if defined?(Bodega)
-    end
-
-    # Set automation flags (graceful fallback if Opts not available)
-    if defined?(Bodega::Opts)
-      Bodega::Opts[:headless] = true
-      Bodega::Opts[:automation] = true
-      Lich.log("Set automation flags via Bodega::Opts")
-    else
-      Lich.log("WARNING: Bodega::Opts not available, using fallback approach")
-    end
-
     # Determine scan type based on UTC time (like our current system)
     current_hour = Time.now.utc.hour
     current_time = Time.now.utc.strftime("%Y-%m-%d %H:%M UTC")
@@ -115,45 +89,17 @@ if Script.exists?("bodega") || defined?(Bodega)
     if current_hour == 8
       Lich.log("=== FULL SCAN MODE (8 AM UTC) ===")
 
-      # Try enhanced Ruby methods first, fallback to direct script execution
-      if defined?(Bodega::Parser) && Bodega::Parser.respond_to?(:smart_scan)
-        Lich.log("Phase 1: Smart scan for recent changes (Ruby method)")
-        Bodega::Parser.smart_scan()
-
-        Lich.log("Phase 2: Full comprehensive scan (Ruby method)")
-        Bodega::Parser.full_scan()
-      else
-        Lich.log("Using direct script execution for full scan")
-        Script.run("bodega", "--parser", "--smart", "--save")
-        Script.run("bodega", "--parser", "--save")
-      end
+      Lich.log("Using direct script execution for full scan")
+      Script.run("bodega", "--parser", "--smart", "--save")
+      Script.run("bodega", "--parser", "--save")
 
     else
       Lich.log("=== SMART SCAN MODE (Non-8AM UTC) ===")
-
-      # Smart scan only - 90% efficiency improvement
-      if defined?(Bodega::Parser) && Bodega::Parser.respond_to?(:smart_scan)
-        Lich.log("Smart scan via Ruby method")
-        Bodega::Parser.smart_scan()
-      else
-        Lich.log("Smart scan via direct script execution")
-        Script.run("bodega", "--parser", "--smart", "--save")
-      end
+      Lich.log("Smart scan via direct script execution")
+      Script.run("bodega", "--parser", "--smart", "--save")
     end
 
-    # Generate output files (try Ruby methods first, then verify files exist)
-    if defined?(Bodega::Parser) && Bodega::Parser.respond_to?(:to_json)
-      Lich.log("Generating JSON output via Ruby method...")
-      Bodega::Parser.to_json()
-
-      # Generate manifest if available
-      if Bodega::Parser.respond_to?(:manifest)
-        Lich.log("Generating manifest via Ruby method...")
-        Bodega::Parser.manifest()
-      end
-    else
-      Lich.log("JSON generation handled by script execution")
-    end
+    Lich.log("JSON generation handled by script execution")
 
     Lich.log("Bodega automation completed successfully")
 
