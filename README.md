@@ -31,7 +31,7 @@ This consolidated repository merges the best of both worlds:
 ## Architecture
 
 ```
-```bodega-consolidated/├── docs/                  # Web Application (GitHub Pages)│   ├── index.html        # Main UI│   ├── *.js             # Feature modules│   ├── style.css        # Responsive styling│   └── netlify/         # API functions├── data/                 # JSON data files│   ├── *.json           # Town shop data│   └── removed_items.json # Removed items tracking├── automation/           # Ruby automation system│   ├── lich/            # Lich environment│   └── bin/             # Automation scripts├── scripts/              # Core scripts│   └── bodega.lic       # Single source of truth├── .github/workflows/    # CI/CD automation│   ├── automation.yml   # Data collection│   ├── deploy.yml       # Web deployment│   └── api-processor.yml # Manual uploads└── README.md            # Documentation```
+```bodega-consolidated/├── docs/                  # Web Application (GitHub Pages)│   ├── index.html        # Main UI│   ├── *.js             # Feature modules│   ├── style.css        # Responsive styling│   ├── data/            # JSON data files│   │   ├── *.json       # Town shop data│   │   └── removed_items.json # Removed items tracking│   └── netlify/         # API functions├── automation/           # Ruby automation system│   ├── lich/            # Lich environment│   └── bin/             # Automation scripts├── scripts/              # Core scripts│   └── bodega.lic       # Single source of truth├── .github/workflows/    # CI/CD automation│   ├── automation.yml   # Data collection│   ├── deploy.yml       # Web deployment│   └── api-processor.yml # Manual uploads└── README.md            # Documentation```
 ```
 
 ## Quick Start

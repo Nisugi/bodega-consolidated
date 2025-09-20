@@ -64,7 +64,26 @@ rescue => e
 end
 "
 
+# Create symlink from automation/lich/bodega to repository data directory
+echo "Creating symlink to data directory..."
+DATA_DIR="$(pwd)/docs/data"
+BODEGA_LINK="automation/lich/bodega"
+
+# Remove existing bodega directory/symlink if it exists
+if [ -L "$BODEGA_LINK" ]; then
+  echo "Removing existing symlink: $BODEGA_LINK"
+  rm "$BODEGA_LINK"
+elif [ -d "$BODEGA_LINK" ]; then
+  echo "Removing existing directory: $BODEGA_LINK"
+  rm -rf "$BODEGA_LINK"
+fi
+
+# Create symlink to repository data directory
+ln -s "$DATA_DIR" "$BODEGA_LINK"
+echo "Created symlink: $BODEGA_LINK -> $DATA_DIR"
+
 echo "Environment setup completed successfully!"
 echo "Character: $SIMU_CHARACTER"
 echo "Lich installation: automation/lich/"
 echo "Authentication file: automation/lich/data/entry.dat"
+echo "Data symlink: $BODEGA_LINK -> $DATA_DIR"

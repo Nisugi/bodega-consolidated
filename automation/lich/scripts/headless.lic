@@ -124,8 +124,8 @@ if Script.exists?("bodega") || defined?(Bodega)
         Bodega::Parser.full_scan()
       else
         Lich.log("Using direct script execution for full scan")
-        Script.run("bodega", "--parser --smart --save")
-        Script.run("bodega", "--parser --save")
+        Script.run("bodega", "--parser", "--smart", "--save")
+        Script.run("bodega", "--parser", "--save")
       end
 
     else
@@ -137,7 +137,7 @@ if Script.exists?("bodega") || defined?(Bodega)
         Bodega::Parser.smart_scan()
       else
         Lich.log("Smart scan via direct script execution")
-        Script.run("bodega", "--parser --smart --save")
+        Script.run("bodega", "--parser", "--smart", "--save")
       end
     end
 

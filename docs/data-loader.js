@@ -12,15 +12,15 @@ class DataLoader {
 
         // List of JSON files to load
         this.dataFiles = [
-            '../data/icemule_trace.json',
-            '../data/mist_harbor.json',
-            '../data/rivers_rest.json',
-            '../data/solhaven.json',
-            '../data/ta_illistim.json',
-            '../data/ta_vaalor.json',
-            '../data/teras_isle.json',
-            '../data/wehnimers_landing.json',
-            '../data/zul_logoth.json'
+            'data/icemule_trace.json',
+            'data/mist_harbor.json',
+            'data/rivers_rest.json',
+            'data/solhaven.json',
+            'data/ta_illistim.json',
+            'data/ta_vaalor.json',
+            'data/teras_isle.json',
+            'data/wehnimers_landing.json',
+            'data/zul_logoth.json'
         ];
     }
 
@@ -84,7 +84,7 @@ class DataLoader {
     async loadRemovedItems() {
         try {
             console.log('Loading removed_items.json...');
-            const response = await fetch('../data/removed_items.json');
+            const response = await fetch('data/removed_items.json');
 
             if (!response.ok) {
                 console.log('No separate removed_items.json found, using embedded data');
@@ -104,7 +104,7 @@ class DataLoader {
     async loadShopMapping() {
         try {
             console.log('Loading shop mapping data...');
-            const response = await fetch('../data/shop_mapping.json');
+            const response = await fetch('data/shop_mapping.json');
 
             if (!response.ok) {
                 console.log('No shop mapping data found');
