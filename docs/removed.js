@@ -320,13 +320,15 @@ class RemovedEngine {
             town: item.lastSeenTown || item.town || 'Unknown'
         };
 
-        // Explicitly set room after spread to ensure it overrides any existing room property
+        // Explicitly set room and shopLocation after spread to ensure it overrides any existing properties
         normalizedItem.room = shopExterior || '';
+        normalizedItem.shopLocation = shopExterior || '';
 
         // Debug the actual normalized item values
         console.log('Normalized item debug:', {
             shopExterior: shopExterior,
             roomValue: normalizedItem.room,
+            shopLocationValue: normalizedItem.shopLocation,
             originalItemRoom: item.room
         });
 
