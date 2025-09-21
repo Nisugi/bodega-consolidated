@@ -1,5 +1,5 @@
 {
-  "created_at": "2025-09-20 20:30:45 UTC",
+  "created_at": "2025-09-21 00:14:08 UTC",
   "run_time": "03s",
   "town": "Teras Isle",
   "shops": [
@@ -3468,27 +3468,6 @@
                 "material": "vultite, an uncommon metal",
                 "enchant": 20,
                 "weight": 20
-              }
-            },
-            {
-              "id": "167725",
-              "name": "an imflass jackblade",
-              "details": {
-                "raw": [
-                  "Analysis of an imflass jackblade indicates the item is free from merchant alteration restrictions.",
-                  "The imflass jackblade will cost 5,000 coins.",
-                  "It is estimated to be worth about 13,000 silvers.",
-                  "It is predominantly crafted of imflass.",
-                  "It is a simple project (41 difficulty) for an adventurer to modify.",
-                  "It has a temporarily unlocked loresong by a bard."
-                ],
-                "tags": [
-                  "max_light"
-                ],
-                "skill": "brawling",
-                "material": "imflass, an uncommon metal",
-                "enchant": 12,
-                "weight": 2
               }
             },
             {
