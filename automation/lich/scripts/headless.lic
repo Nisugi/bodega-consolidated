@@ -1,119 +1,17 @@
-=begin
-  Enhanced Bodega Automation Script
-  Combines original author's clean Ruby patterns with our performance optimizations
 
-  This script runs in automation mode and handles:
-  - Single source of truth with repository fallback
-  - Smart vs Full scanning based on time
-  - Proper Ruby module integration
-  - Error handling and logging
-=end
+Script.start("log")
 
-require "pathname"
+fput("go table")
 
-# Automation mode detection
-if ENV["CI"] || ENV["GITHUB_ACTIONS"]
-  Lich.log("Automation mode detected")
-
-  # Try to load bodega.lic from our single source of truth first
-  bodega_path = File.expand_path("../../../scripts/bodega.lic", __FILE__)
-
-  if File.exist?(bodega_path)
-    Lich.log("Loading bodega.lic from single source of truth: #{bodega_path}")
-    begin
-      load(bodega_path)
-      Lich.log("Successfully loaded bodega.lic from consolidated scripts folder")
-    rescue => e
-      Lich.log("ERROR: Failed to load local bodega.lic: #{e.message}")
-      Lich.log("Falling back to repository download...")
-      bodega_path = nil  # Clear path to trigger fallback
-    end
-  else
-    Lich.log("Local bodega.lic not found at: #{bodega_path}")
-    Lich.log("Falling back to repository download...")
-  end
-
-  # Fallback: Download from repository (original author's pattern)
-  unless File.exist?(bodega_path) && defined?(Bodega)
-    Lich.log("Downloading bodega.lic from repository...")
-    begin
-      Script.run(%[repository], %[download bodega.lic])
-      Lich.log("Successfully downloaded bodega.lic from repository")
-    rescue => e
-      Lich.log("ERROR: Failed to download bodega.lic from repository: #{e.message}")
-      raise "Could not load bodega.lic from either local path or repository"
-    end
-  end
-
+if Time.now.hour == 8
+  Lich.log("Starting Full Bodega Scan (which_bodega)")
+  Script.run("bodega", "--parser --smart --save")
+  Script.run("bodega", "--parser --save")
 else
-  Lich.log("Development mode - checking for local bodega script")
-
-  # In development, try single source of truth first
-  bodega_path = File.expand_path("../../../scripts/bodega.lic", __FILE__)
-
-  if File.exist?(bodega_path)
-    Lich.log("Loading bodega.lic from: #{bodega_path}")
-    load(bodega_path)
-  elsif Script.exists?("bodega")
-    Lich.log("Using bodega script from Lich scripts directory")
-    # Script will be loaded automatically
-  else
-    raise "bodega.lic not found in either consolidated scripts or Lich directory"
-  end
+  Lich.log("Starting Smart Bodega Scan (which_bodega)")
+  Script.run("bodega", "--parser --smart --save")
 end
 
-# Enhanced debugging in automation
-if ENV["DEBUG"] || ENV["GITHUB_ACTIONS"]
-  Lich.log("Debug mode enabled - detailed logging active")
-end
+Lich.log("Bodega out -- quitting!")
 
-# Start logging script for game output capture
-Lich.log("Starting log.lic for game output capture...")
-begin
-  Script.start('log')
-  Lich.log("Log script started successfully")
-rescue => e
-  Lich.log("WARNING: Could not start log script: #{e.message}")
-end
-
-# Main automation logic
-if Script.exists?("bodega")
-  begin
-    # Determine scan type based on UTC time (like our current system)
-    current_hour = Time.now.utc.hour
-    current_time = Time.now.utc.strftime("%Y-%m-%d %H:%M UTC")
-
-    Lich.log("Current time: #{current_time}")
-    Lich.log("UTC Hour: #{current_hour}")
-
-    if current_hour == 8
-      Lich.log("=== FULL SCAN MODE (8 AM UTC) ===")
-
-      Lich.log("Using direct script execution for full scan")
-      Script.run("bodega", "--parser", "--smart", "--save")
-      Script.run("bodega", "--parser", "--save")
-
-    else
-      Lich.log("=== SMART SCAN MODE (Non-8AM UTC) ===")
-      Lich.log("Smart scan via direct script execution")
-      Script.run("bodega", "--parser", "--smart", "--save")
-    end
-
-    Lich.log("JSON generation handled by script execution")
-
-    Lich.log("Bodega automation completed successfully")
-
-  rescue => exception
-    Lich.log("ERROR: Bodega automation failed")
-    Lich.log("Exception: #{exception.message}")
-    Lich.log("Backtrace:")
-    exception.backtrace.each { |line| Lich.log("  #{line}") }
-    Thread.main.raise(exception.message)
-  end
-else
-  Thread.main.raise("Bodega script not available - check installation")
-end
-
-# Clean exit
-Lich.log("Bodega automation complete - exiting game")
 fput("quit")
