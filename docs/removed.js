@@ -300,12 +300,16 @@ class RemovedEngine {
     }
 
     showItemDetails(item) {
+        // Get shop exterior description from shop mapping if available
+        const shopMapping = window.dataLoader && window.dataLoader.shopMapping ? window.dataLoader.shopMapping : {};
+        const shopExterior = shopMapping[item.lastSeenShop]?.exterior || '';
+
         // Create a normalized item object for the modal
         const normalizedItem = {
             ...item,
             shopName: item.lastSeenShop || 'Unknown Shop',
             town: item.lastSeenTown || item.town || 'Unknown',
-            room: item.lastSeenShop || 'Unknown' // Use shop name as room since removed items don't have room details
+            room: shopExterior || item.lastSeenShop || 'Unknown' // Use shop exterior description or shop name
         };
 
         // Use existing modal functionality from search engine with normalized data
