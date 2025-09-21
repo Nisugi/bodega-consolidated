@@ -317,9 +317,18 @@ class RemovedEngine {
         const normalizedItem = {
             ...item,
             shopName: item.lastSeenShop || 'Unknown Shop',
-            town: item.lastSeenTown || item.town || 'Unknown',
-            room: shopExterior || '' // Use shop exterior description or leave blank if not found
+            town: item.lastSeenTown || item.town || 'Unknown'
         };
+
+        // Explicitly set room after spread to ensure it overrides any existing room property
+        normalizedItem.room = shopExterior || '';
+
+        // Debug the actual normalized item values
+        console.log('Normalized item debug:', {
+            shopExterior: shopExterior,
+            roomValue: normalizedItem.room,
+            originalItemRoom: item.room
+        });
 
         // Use existing modal functionality from search engine with normalized data
         if (window.searchEngine && window.searchEngine.showItemDetails) {
