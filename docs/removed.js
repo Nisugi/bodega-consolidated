@@ -300,9 +300,17 @@ class RemovedEngine {
     }
 
     showItemDetails(item) {
-        // Use existing modal functionality from search engine
+        // Create a normalized item object for the modal
+        const normalizedItem = {
+            ...item,
+            shopName: item.lastSeenShop || 'Unknown Shop',
+            town: item.lastSeenTown || item.town || 'Unknown',
+            room: item.lastSeenShop || 'Unknown' // Use shop name as room since removed items don't have room details
+        };
+
+        // Use existing modal functionality from search engine with normalized data
         if (window.searchEngine && window.searchEngine.showItemDetails) {
-            window.searchEngine.showItemDetails(item);
+            window.searchEngine.showItemDetails(normalizedItem);
         }
     }
 

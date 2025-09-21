@@ -253,10 +253,7 @@ class AddedEngine {
             <td class="item-price">${this.formatPrice(item.price)}</td>
             <td class="item-properties">${properties.innerHTML}</td>
             <td class="item-town">${item.town || 'Unknown'}</td>
-            <td class="item-shop">
-                <div class="shop-name">${item.shop || 'Unknown'}</div>
-                ${item.room ? `<div class="room-name">${item.room}</div>` : ''}
-            </td>
+            <td class="item-shop">${item.room || item.shop || 'Unknown'}</td>
         `;
 
         // Add click handler for item details
