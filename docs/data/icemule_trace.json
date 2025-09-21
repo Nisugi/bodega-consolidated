@@ -1,6 +1,6 @@
 {
-  "created_at": "2025-09-20 20:31:15 UTC",
-  "run_time": "13s",
+  "created_at": "2025-09-21 00:14:43 UTC",
+  "run_time": "14s",
   "town": "Icemule Trace",
   "shops": [
     {
@@ -17215,34 +17215,6 @@
                   "The lapis lazuli can not be worn.",
                   "Analysis of some blue lapis lazuli indicates the item is free from merchant alteration restrictions.",
                   "The blue lapis lazuli will cost 2,500 coins."
-                ],
-                "tags": [
-
-                ]
-              }
-            },
-            {
-              "id": "230233032",
-              "name": "a smoky topaz",
-              "details": {
-                "raw": [
-                  "The topaz can not be worn.",
-                  "Analysis of a smoky topaz indicates the item is free from merchant alteration restrictions.",
-                  "The smoky topaz will cost 1,500 coins."
-                ],
-                "tags": [
-
-                ]
-              }
-            },
-            {
-              "id": "230233031",
-              "name": "a smoky topaz",
-              "details": {
-                "raw": [
-                  "The topaz can not be worn.",
-                  "Analysis of a smoky topaz indicates the item is free from merchant alteration restrictions.",
-                  "The smoky topaz will cost 1,500 coins."
                 ],
                 "tags": [
 

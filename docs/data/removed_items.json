@@ -2530,6 +2530,397 @@
       "removed_date": "2025-09-20T20:07:32Z",
       "last_seen_shop": "Gemaneen's General Store",
       "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "157627",
+      "name": "a light pink note",
+      "details": {
+        "raw": [
+          "In the Common language, it reads:",
+          "This note can be REDEEMed to increase an appropriate item's capacity by 10 pounds up to a maximum of:",
+          "Back and shoulder containers: 160 pounds",
+          "Slung on shoulder containers: 70 pounds",
+          "Torso, attached to belt, and front containers: 50 pounds",
+          "NOTE: If your item's capacity limit is lower than the service amount, the item is ineligible.",
+          "Tiny and extremely tiny containers are also ineligible for use with this note.",
+          "The note can not be worn.",
+          "Analysis of a light pink note indicates the creator has provided the following information:",
+          "This pink note can be REDEEMed to increase the capacity of a worn container (back, shoulder, slung on shoulder, torso, attached to belt, and front) by 10 pounds.  Containers worn in other locations are not eligible for this note.",
+          "Please note that in some cases, this increase may change your item from non-functional to functional.  In addition, any items restricted to hold a specific number of items (ie: your container will only hold one item) will still only hold X number of items.  This note will not change that.  Normal restrictions will apply and may vary from item to item.",
+          "Some scripted items are eligible for redemption with this pink note.",
+          "A light pink note is a single-use note.",
+          "HUG your note to see a list of denied scripts.",
+          "The pink note will cost 240,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "organic material, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:22Z",
+      "last_seen_shop": "The Best Defence",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "158606",
+      "name": "a faenor-hilted black ora longsword",
+      "details": {
+        "raw": [
+          "Analysis of a faenor-hilted black ora longsword indicates the item has certain alteration restrictions.  It would need to be supplied to be used in an alteration and may only be used as an accent.  Black ora is not considered \"pure\" unless it can re-curse itself.  This material cannot be dyed.",
+          "The black ora longsword will cost 40,000 coins.",
+          "It is estimated to be worth about 31,000 silvers.",
+          "It is predominantly crafted of black ora.",
+          "It is a basic project (182 difficulty) for an adventurer to modify.",
+          "It has a temporarily unlocked loresong by a bard for 1 day, 19 hours and 4 minutes."
+        ],
+        "tags": [
+          "lightenable"
+        ],
+        "skill": "edged weapons",
+        "material": "black ora, an extraordinarily rare metal",
+        "enchant": 10,
+        "flare": "the power of a dark substance",
+        "weight": 5
+      },
+      "removed_date": "2025-09-21T00:13:26Z",
+      "last_seen_shop": "Dara's Weaponry",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "169167826",
+      "name": "some pink socks with a pig on each toe",
+      "details": {
+        "raw": [
+          "It is estimated that some pink socks with a pig on each toe can store a very small amount with enough space for one item.",
+          "Analysis of some pink socks with a pig on each toe indicates the item is free from merchant alteration restrictions.",
+          "A talented merchant may be able to deepen the pink socks's pockets, but there may be restrictions on how many items they can hold.  However, you can tell that the socks are as light as they can get.",
+          "The pink socks will cost 350,000 coins.",
+          "It is estimated to be worth about 10,000 silvers.",
+          "It is a container with a maximum interior capacity of 1 pound with room for one item.",
+          "It is predominantly crafted of cloth.",
+          "It has a permanently unlocked loresong by Kristalin."
+        ],
+        "tags": [
+          "small"
+        ],
+        "worn": "socks",
+        "material": "cloth, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:30Z",
+      "last_seen_shop": "Curious Curiosities",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "332267779",
+      "name": "an opalescent glass jar containing uncut diamonds",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing uncut diamonds can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing uncut diamonds indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 100,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:30Z",
+      "last_seen_shop": "Vindicate's Armory",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "291481834",
+      "name": "an opalescent glass jar containing pieces of rose quartz",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing pieces of rose quartz can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing pieces of rose quartz indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:38Z",
+      "last_seen_shop": "Traiva's General Store",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "265229581",
+      "name": "an opalescent glass jar containing fire opals",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing fire opals can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing fire opals indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "265229462",
+      "name": "an opalescent glass jar containing deep purple amethysts",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing deep purple amethysts can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing deep purple amethysts indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336768893",
+      "name": "an opalescent glass jar containing violet sapphires",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing violet sapphires can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing violet sapphires indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336768900",
+      "name": "an opalescent glass jar containing pink sapphires",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing pink sapphires can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing pink sapphires indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 50,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336768950",
+      "name": "an opalescent glass jar containing uncut diamonds",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing uncut diamonds can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing uncut diamonds indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 100,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336768944",
+      "name": "an opalescent glass jar containing green garnets",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing green garnets can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing green garnets indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336768946",
+      "name": "an opalescent glass jar containing polished red coral",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing polished red coral can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing polished red coral indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "340295236",
+      "name": "an opalescent glass jar containing smoky topazes",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing smoky topazes can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing smoky topazes indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336301731",
+      "name": "an opalescent glass jar containing uncut diamonds",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing uncut diamonds can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing uncut diamonds indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 99,500 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "336301730",
+      "name": "an opalescent glass jar containing uncut diamonds",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing uncut diamonds can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing uncut diamonds indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 99,500 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "282189511",
+      "name": "an opalescent glass jar containing star rubies",
+      "details": {
+        "raw": [
+          "It is estimated that an opalescent glass jar containing star rubies can store a very small amount with enough space for one item.",
+          "The jar can not be worn.",
+          "Analysis of an opalescent glass jar containing star rubies indicates the creator has provided the following information:",
+          "This glass jar is designed to hold small, nearly identical items -- in particular, gems, alchemy ingredients other than critter skins, etc.",
+          "Alterations are permitted to the base description following the 15/15/15 rule in ALTER 2, provided that it continues to make sense that the contents would be identifiable without looking inside.",
+          "It can hold a maximum of 20 items.  PUT items in to store them.  SHAKE the jar to get them back out.",
+          "The glass jar will cost 23,500 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "glass, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:13:51Z",
+      "last_seen_shop": "Aniarra's Magic Shoppe",
+      "town": "Wehnimer's Landing"
+    },
+    {
+      "id": "310958251",
+      "name": "an Elanthian Guilds voucher pack",
+      "details": {
+        "raw": [
+          "In neat calligraphy, it reads:",
+          "This pack entitles the presenter to 30 free guild task trade-ins, courtesy of the Elanthian Guilds Council.",
+          "To redeem this Guilds voucher pack, please GIVE it to any profession guild training administrator.",
+          "The pack can not be worn.",
+          "Analysis of an Elanthian Guilds voucher pack indicates the creator has provided the following information:",
+          "This pack contains 30 vouchers for free task trade-ins at the various profession guilds.",
+          "GIVE the pack to a Training Administrator to redeem the vouchers and have them added to your total in GLD.",
+          "BUNDLE it with other packs or vouchers like it to combine uses.",
+          "TEAR it to remove a single voucher.",
+          "It cannot be altered.",
+          "The Guilds voucher pack will cost 1,600,000 coins."
+        ],
+        "tags": [
+
+        ],
+        "material": "organic material, an extremely common material"
+      },
+      "removed_date": "2025-09-21T00:14:05Z",
+      "last_seen_shop": "Luxelle's Magic Shoppe",
+      "town": "Wehnimer's Landing"
     }
   ],
   "Solhaven": [
@@ -3341,6 +3732,40 @@
       "removed_date": "2025-09-20T20:08:04Z",
       "last_seen_shop": "Bhast's Magic Shoppe",
       "town": "Icemule Trace"
+    },
+    {
+      "id": "230233032",
+      "name": "a smoky topaz",
+      "details": {
+        "raw": [
+          "The topaz can not be worn.",
+          "Analysis of a smoky topaz indicates the item is free from merchant alteration restrictions.",
+          "The smoky topaz will cost 1,500 coins."
+        ],
+        "tags": [
+
+        ]
+      },
+      "removed_date": "2025-09-21T00:14:33Z",
+      "last_seen_shop": "Medulis's Magic Shoppe",
+      "town": "Icemule Trace"
+    },
+    {
+      "id": "230233031",
+      "name": "a smoky topaz",
+      "details": {
+        "raw": [
+          "The topaz can not be worn.",
+          "Analysis of a smoky topaz indicates the item is free from merchant alteration restrictions.",
+          "The smoky topaz will cost 1,500 coins."
+        ],
+        "tags": [
+
+        ]
+      },
+      "removed_date": "2025-09-21T00:14:33Z",
+      "last_seen_shop": "Medulis's Magic Shoppe",
+      "town": "Icemule Trace"
     }
   ],
   "Ta'Illistim": [
@@ -3831,6 +4256,43 @@
       "removed_date": "2025-09-20T20:08:34Z",
       "last_seen_shop": "Nindon's Magic Shoppe",
       "town": "Mist Harbor"
+    },
+    {
+      "id": "188226",
+      "name": "a hollowed quartz orb",
+      "details": {
+        "raw": [
+          "The orb can not be worn.",
+          "Analysis of a hollowed quartz orb indicates the item is free from merchant alteration restrictions.",
+          "The quartz orb will cost 20,000 coins."
+        ],
+        "tags": [
+
+        ]
+      },
+      "removed_date": "2025-09-21T00:15:07Z",
+      "last_seen_shop": "Amynara's Magic Shoppe",
+      "town": "Mist Harbor"
+    },
+    {
+      "id": "187643",
+      "name": "a bundle of creamy swallow fletchings",
+      "details": {
+        "raw": [
+          "There are 100 fletchings in the bundle, made from the feather of some local avian creature and designed to stabilize projectile during flight.",
+          "The fletchings can not be worn.",
+          "Analysis of a bundle of creamy swallow fletchings indicates the creator has provided the following information:",
+          "You get the distinct impression that any willing merchant can alter the fletchings, but be aware that only the \"adjective\" part of the fletchings's base will show up on a finished arrow (meaning, only the adjective part of the 15/15/15 (the middle 15) will show up on fletched arrows).  Due to this, some merchants may only be willing to alter that part of your fletchings.",
+          "Alterations to the adjective must make sense to be on a fletching.  This includes: colors; paint and dyes (eg. blue-painted, red-dyed, green-stained); designs that make sense on a small fletching (pink-striped, trident-stamped); or feathers of a specific bird (green parrot, mottled falcon).  Nothing crazy, like attachable adornments (no deathstone-studded fletchings!), are allowed.",
+          "The creamy swallow fletchings will cost 50,000 coins."
+        ],
+        "tags": [
+
+        ]
+      },
+      "removed_date": "2025-09-21T00:15:07Z",
+      "last_seen_shop": "Nightshade's Kiss",
+      "town": "Mist Harbor"
     }
   ],
   "River's Rest": [
@@ -4197,6 +4659,69 @@
       "removed_date": "2025-09-20T20:07:51Z",
       "last_seen_shop": "Kaldonis's Smuggling Emporium",
       "town": "River's Rest"
+    },
+    {
+      "id": "173259",
+      "name": "a gold filigree bloodjewel necklace",
+      "details": {
+        "raw": [
+          "Analysis of a gold filigree bloodjewel necklace indicates the item is free from merchant alteration restrictions.",
+          "The bloodjewel necklace will cost 30,000 coins.",
+          "It has 15 charges.  It is rechargeable.",
+          "It will persist after its last magical charge has been expended.",
+          "It is an enhancive item:",
+          "    It seems to have several enhancive charges remaining.",
+          "It will crumble into dust after its last enhancive charge has been expended.",
+          "It is estimated to be worth about 100,000 silvers.",
+          "It has a permanently unlocked loresong by Vonaq."
+        ],
+        "tags": [
+          "purpose",
+          "small"
+        ],
+        "worn": "neck",
+        "spell": "Spirit Warding I",
+        "activator": "tapping",
+        "enhancives": [
+          {
+            "boost": 2,
+            "ability": "Agility Bonus"
+          },
+          {
+            "boost": 2,
+            "ability": "Harness Power Ranks"
+          }
+        ]
+      },
+      "removed_date": "2025-09-21T00:14:27Z",
+      "last_seen_shop": "Ntinly's Magic Shoppe",
+      "town": "River's Rest"
+    }
+  ],
+  "Teras Isle": [
+    {
+      "id": "167725",
+      "name": "an imflass jackblade",
+      "details": {
+        "raw": [
+          "Analysis of an imflass jackblade indicates the item is free from merchant alteration restrictions.",
+          "The imflass jackblade will cost 5,000 coins.",
+          "It is estimated to be worth about 13,000 silvers.",
+          "It is predominantly crafted of imflass.",
+          "It is a simple project (41 difficulty) for an adventurer to modify.",
+          "It has a temporarily unlocked loresong by a bard."
+        ],
+        "tags": [
+          "max_light"
+        ],
+        "skill": "brawling",
+        "material": "imflass, an uncommon metal",
+        "enchant": 12,
+        "weight": 2
+      },
+      "removed_date": "2025-09-21T00:14:06Z",
+      "last_seen_shop": "Athyena's Weaponry",
+      "town": "Teras Isle"
     }
   ]
 }
