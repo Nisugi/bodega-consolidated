@@ -304,12 +304,21 @@ class RemovedEngine {
         const shopMapping = window.dataLoader && window.dataLoader.shopMapping ? window.dataLoader.shopMapping : {};
         const shopExterior = shopMapping[item.lastSeenShop]?.exterior || '';
 
+        // Debug logging to see what's happening
+        console.log('Shop mapping debug:', {
+            hasDataLoader: !!window.dataLoader,
+            hasShopMapping: !!(window.dataLoader && window.dataLoader.shopMapping),
+            shopMappingKeys: shopMapping ? Object.keys(shopMapping).length : 0,
+            lookingForShop: item.lastSeenShop,
+            foundExterior: shopExterior
+        });
+
         // Create a normalized item object for the modal
         const normalizedItem = {
             ...item,
             shopName: item.lastSeenShop || 'Unknown Shop',
             town: item.lastSeenTown || item.town || 'Unknown',
-            room: shopExterior || item.lastSeenShop || 'Unknown' // Use shop exterior description or shop name
+            room: shopExterior || '' // Use shop exterior description or leave blank if not found
         };
 
         // Use existing modal functionality from search engine with normalized data
